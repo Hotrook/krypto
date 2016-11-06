@@ -27,7 +27,7 @@ import javax.crypto.spec.IvParameterSpec;
 import org.apache.commons.codec.binary.Base64;
 
 public class SymmetricKeyWithKeyTool {
-        private static String[] modes = {"CBC", "CTR","GCM" };
+        private static String[] modes = { "CBC", "CTR","GCM" };
         private static String keystore_path;
         private static String key_id;
         private static String file_path;
