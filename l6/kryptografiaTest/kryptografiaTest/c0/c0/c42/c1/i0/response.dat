@@ -1,0 +1,43 @@
+HTTP/1.1 200 Partial Content
+Date: Sat, 10 Dec 2016 19:38:42 GMT
+Server: Apache/2.4.23 (Unix) OpenSSL/1.0.2j PHP/5.6.28 mod_perl/2.0.8-dev Perl/v5.16.3
+Last-Modified: Tue, 07 Jun 2016 20:44:50 GMT
+ETag: "14d-534b6429f9480"
+Accept-Ranges: bytes
+Content-Length: 333
+Content-Range: bytes 0-332/333
+Keep-Alive: timeout=5, max=67
+Connection: Keep-Alive
+Content-Type: text/css
+
+p, h1{ 
+	padding: 20px;
+}
+
+.navbar{
+	background-color: #5C5C5C;
+}
+
+.jumbotron{
+	background-color: #de412a;
+}
+
+#logowanie{
+	max-width: 400px;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	border-color: #5C5C5C;
+}
+
+.panel > .panel-heading{
+	background-color: #5C5C5C;
+}
+
+form{
+	padding: 10px;
+}
+
+input{ 
+	width: 100%;
+}

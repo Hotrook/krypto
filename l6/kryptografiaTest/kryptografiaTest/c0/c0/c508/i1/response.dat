@@ -1,0 +1,22 @@
+HTTP/1.1 200 Partial Content
+Date: Sat, 10 Dec 2016 19:38:15 GMT
+Server: Apache/2.4.23 (Unix) OpenSSL/1.0.2j PHP/5.6.28 mod_perl/2.0.8-dev Perl/v5.16.3
+X-Powered-By: PHP/5.6.28
+Content-Range: bytes 0-2195/2196
+Content-Length: 2196
+Keep-Alive: timeout=5, max=93
+Connection: Keep-Alive
+Content-Type: text/html; charset=UTF-8
+
+<br />
+<b>Notice</b>:  Undefined index: RECIPIENT in <b>/Applications/XAMPP/xamppfiles/htdocs/kryptografia/confirmation.php</b> on line <b>3</b><br />
+<br />
+<b>Notice</b>:  Undefined index: ACCOUNT_NUMBER in <b>/Applications/XAMPP/xamppfiles/htdocs/kryptografia/confirmation.php</b> on line <b>4</b><br />
+<br />
+<b>Notice</b>:  Undefined index: TITLE in <b>/Applications/XAMPP/xamppfiles/htdocs/kryptografia/confirmation.php</b> on line <b>5</b><br />
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"

@@ -112,9 +112,6 @@ int main(int argc, char *argv[]){
 
 
 
-
-
-
 //*****************************************************************************
 void * PrintHello( void *threadid ){
 	data * input = (data*) threadid;
@@ -139,11 +136,11 @@ void * PrintHello( void *threadid ){
 	for( int i = 0 ; i < (int)input->suffix.length() ; ++i )key[ i + bits  ]=input->suffix[ i ];
 	for( int i = 0 ; i < (int)input->str_in.length() ; ++i ) ciphertext[ i ] = input->str_in[ i ];
 
-	*start = input->start;// 2386059390-10000000;
+	*start = input->start;
 	*stop = (tid + 1 )*scope;
 
 
-	cout << "Czesc Sebastian! Wątek " << tid << " wystartował!" << endl;
+	cout << "Wątek " << tid << " wystartował!" << endl;
 	cout << "Mój zakres: " << *start << " do " << *stop << endl;
 	for( ;  *start <= *stop ; (*start)++ ){
 		if( mode % 8 != 0 ){
@@ -167,7 +164,7 @@ void * PrintHello( void *threadid ){
 	    	and (x = alnum(decryptedtext,decryptedtext_len )) > 0.5 ){
 
 	    	cout << endl;
-	    	cout << "SEBASTIAN !!! Znalazłem coś. To wygląda podejrzanie! " << endl;
+	    	cout << "Znalazłem coś. To wygląda podejrzanie! " << endl;
 	    	for( int i = 0 ; i < decryptedtext_len ; ++i ){
 	    		cout << decryptedtext[ i ] ;
 	    	}

@@ -1,0 +1,77 @@
+HTTP/1.1 200 Partial Content
+Date: Sat, 10 Dec 2016 19:38:15 GMT
+Server: Apache/2.4.23 (Unix) OpenSSL/1.0.2j PHP/5.6.28 mod_perl/2.0.8-dev Perl/v5.16.3
+X-Powered-By: PHP/5.6.28
+Content-Range: bytes 0-1554/1555
+Content-Length: 1555
+Keep-Alive: timeout=5, max=84
+Connection: Keep-Alive
+Content-Type: text/html; charset=UTF-8
+
+gość
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="./mychat.js"></script>
+<script src="./handler.js"></script>
+
+<script>
+var nick = getCookie("NICK");
+if (nick == null){
+	nick = "gość";
+	alert("Wejście na stronę bez nick'a");
+}
+var timer; //to sie może przydać do wyłącznenia chata
+
+$.ajaxSetup({ cache: false });
+
+$(document).ready(function() {   	
+	$("#NICK").html(nick);
+
+
+	updateAdmin(nick);
+	// timer = setInterval(function(){ updateChat(nick); }, 200000);
+});
+</script>
+<link rel="stylesheet" type="text/css" href="css/MainPage.css">
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+	        <a class="navbar-brand" href="#">Witaj, gość</a>
+		</div>
+
+		<div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="./index.html">Wyloguj</a></li>
+            <li><a href="./transfer.php">Wykonaj nowy przelew</a></li>
+          </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+	<div id="header">
+		<h1 id='header-text'>
+			Strona Banku
+		</h1>
+		<p id="qoute">
+			<!-- "Jest przepiękna i cudowna." ~ Paulo Coelho  -->
+		</p>
+	</div>
+</div> 
+
+
+<div class="container" id="history">
+</div>
+
+
+</body>
+</html>

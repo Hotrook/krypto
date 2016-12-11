@@ -1,0 +1,19 @@
+HTTP/1.1 302 Found
+Date: Sat, 10 Dec 2016 19:30:11 GMT
+Server: Apache/2.4.23 (Unix) OpenSSL/1.0.2j PHP/5.6.28 mod_perl/2.0.8-dev Perl/v5.16.3
+X-Powered-By: PHP/5.6.28
+location: INSERT INTO history(username, recipient, account_number, title) VALUES(?,?,?,?)
+Content-Length: 571
+Keep-Alive: timeout=5, max=78
+Connection: Keep-Alive
+Content-Type: text/html; charset=UTF-8
+
+<br />
+<b>Notice</b>:  Undefined index: username in <b>/Applications/XAMPP/xamppfiles/htdocs/kryptografia/new.php</b> on line <b>5</b><br />
+<br />
+<b>Notice</b>:  Undefined index: recipient in <b>/Applications/XAMPP/xamppfiles/htdocs/kryptografia/new.php</b> on line <b>8</b><br />
+<br />
+<b>Notice</b>:  Undefined index: account_number in <b>/Applications/XAMPP/xamppfiles/htdocs/kryptografia/new.php</b> on line <b>11</b><br />
+<br />
+<b>Notice</b>:  Undefined index: title in <b>/Applications/XAMPP/xamppfiles/htdocs/kryptografia/new.php</b> on line <b>14</b><br />
+4tml} {c!

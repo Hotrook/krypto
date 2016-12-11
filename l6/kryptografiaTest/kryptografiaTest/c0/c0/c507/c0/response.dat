@@ -1,0 +1,14 @@
+HTTP/1.1 302 Found
+Date: Sat, 10 Dec 2016 19:38:14 GMT
+Server: Apache/2.4.23 (Unix) OpenSSL/1.0.2j PHP/5.6.28 mod_perl/2.0.8-dev Perl/v5.16.3
+X-Powered-By: PHP/5.6.28
+location: http://10.0.2.2/kryptografia/index.html
+Content-Length: 298
+Keep-Alive: timeout=5, max=27
+Connection: Keep-Alive
+Content-Type: text/html; charset=UTF-8
+
+<br />
+<b>Notice</b>:  Undefined variable: result in <b>/Applications/XAMPP/xamppfiles/htdocs/kryptografia/CheckUser.php</b> on line <b>30</b><br />
+<br />
+<b>Notice</b>:  Undefined variable: result in <b>/Applications/XAMPP/xamppfiles/htdocs/kryptografia/CheckUser.php</b> on line <b>33</b><br />
