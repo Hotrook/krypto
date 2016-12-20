@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- <link rel="stylesheet"  href="bootstrap/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- <link rel="stylesheet"  href="bootstrap/css/bootstrap-theme.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="./handler.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<meta name="google-signin-client_id" content="729460872012-qpql2t46eqvathjkuvrg7647ntjgdg7t.apps.googleusercontent.com">
+
+</head>
+	<body>
+		<script>
+			function statusChangeCallback(response) {
+				console.log('statusChangeCallback');
+				console.log(response);
+
+				if (response.status === 'connected') {
+					FB.api('/me', function(response) {
+						document.cookie ="NICK="+response.name;
+						console.log( response.name +"Tanniec§" )
+					});
+					window.location.replace( "http://localhost/kryptografia/MainPage.php");
+
+				} else if (response.status === 'not_authorized') {
+				  document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+				} else {
+				  document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
+				}
+			}
+			function checkLoginState() {
+				FB.getLoginStatus(function(response) {
+					statusChangeCallback(response);
+				});
+			}
+
+			window.fbAsyncInit = function() {
+				FB.init({
+					appId      : '119905528504724',
+					cookie     : true,  // enable cookies to allow the server to access 
+					                    // the session
+					xfbml      : true,  // parse social plugins on this page
+					version    : 'v2.8' // use graph api version 2.8
+				});
+
+
+				FB.getLoginStatus(function(response) {
+					statusChangeCallback(response);
+				});
+
+			};
+
+			(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.8";
+				  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+			
+			function testAPI() {
+				console.log('Welcome!  Fetching your information.... ');
+				FB.api('/me', function(response) {
+				console.log('Successful login for: ' + response.name);
+				document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
+				});
+			}
+
+			function onSignIn(googleUser) {
+				var profile = googleUser.getBasicProfile();
+				console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+				console.log('Name: ' + profile.getName());
+				console.log('Image URL: ' + profile.getImageUrl());
+				console.log('Email: ' + profile.getEmail());
+				document.cookie ="NICK="+profile.getName();
+				window.location.replace( "http://localhost/kryptografia/MainPage.php");
+			}
+		</script>
+
+
+
+
+
+		<div id="logowanie" class="panel panel-primary">
+
+			<div class="panel-heading">
+				<h3 class="panel-title">Logowanie</h3>
+			</div>
+
+			<form method="post" action="./CheckUser.php">
+				<span>Twój NICK: </span> <br> <input type="text"     name="NICK" ><br>
+				<span>Hasło:     </span> <br><input  type="password" name="pass" > <br><br>
+				<input  type="submit" class="button" value="Zaloguj się">
+				<div class="g-recaptcha" data-sitekey="6LcXQw8UAAAAADF9YK7HxjBmcDXG9DveJSAHysbL"></div>
+				<br/>
+			</form>
+
+			<a href="./newaccount.php">Nie masz konta? Zarejestruj się.</a><br>
+			<a href="./recovery/recovery.php">Zapomniałeś hasła? </a>
+			<div><fb:login-button id="facebook" scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button></div>
+			<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+			<div id="status"></div>
+		</div>
+
+	</body>
+</html>
